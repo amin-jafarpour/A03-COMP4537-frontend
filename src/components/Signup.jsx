@@ -1,8 +1,10 @@
 import "./Signup.css";
 import React, {  useState } from "react";
 import {link} from '../backend'
+import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
+  const navigate = useNavigate();
   const [credentials, setCredentials] = useState({
     email: "",
     username: "",
@@ -19,7 +21,8 @@ const Signup = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        window.location.href = "/login";
+        // window.location.href = "/login";
+        navigate('/login', { replace: true });
       })
       .catch((error) => {
         console.error("err", error);

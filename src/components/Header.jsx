@@ -1,8 +1,11 @@
 import './Header.css'
 import {link} from '../backend'
+import { useNavigate } from 'react-router-dom';
 
 
 const Header = ({refreshToken}) => {
+  const navigate = useNavigate();
+  
   const signout = () =>{
     fetch(link+"logout", {
       method: "GET",
@@ -17,7 +20,9 @@ const Header = ({refreshToken}) => {
         console.log('Header > signout', data)
         // localStorage.setItem("auth-token-refresh", null);
         localStorage.removeItem("auth-token-refresh");
-        window.location.href = "/";
+        // window.location.href = "/";
+        navigate('/', { replace: true });
+
       })
       .catch((error) => {
         console.error("err", error);

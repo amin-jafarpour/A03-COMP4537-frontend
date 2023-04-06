@@ -6,8 +6,9 @@ import Header from "./Header";
 import Monitor from "./Monitor";
 import Poke from './Poke'
 import {link} from '../backend'
-
+import { useNavigate } from 'react-router-dom';
 const Main = () => {
+  const navigate = useNavigate();
   const [pokemons, setPokemons] = useState([]);
   const [tokens, setTokens] = useState({accessToken: "", refreshToken: "", isAdmin: false, showAdmin: false, pokemonDetail: false});
   const [currentPoke, setCurrentPoke] = useState({})
@@ -37,7 +38,8 @@ const Main = () => {
   useEffect(() => {
     if (localStorage.getItem("auth-token-refresh") === null) {
       //localstorage*
-      window.location.href = "/"; //one here to go to login
+      // window.location.href = "/"; //one here to go to login
+      navigate('/', { replace: true });
     }
     fetch(link+"requestNewAccessToken", {
       method: "POST",
@@ -50,7 +52,8 @@ const Main = () => {
       .then((response) => response.json())
       .then((data) => {
         if (data.hasOwnProperty("err")) {
-          window.location.href = "/"
+          // window.location.href = "/"
+          navigate('/', { replace: true });
         } //&&MIGHT NEED TO CHAGE
         setTokens({...tokens, accessToken: data["auth-token-access"], refreshToken: localStorage.getItem("auth-token-refresh"), isAdmin: data['isAdmin']})
         fetchPokemons(
