@@ -1,0 +1,29 @@
+.signup-main {
+    display: grid;
+    grid-template-columns: auto;
+    /* background-color: #2196F3; */
+    padding: 10px;
+    justify-content: center;
+    gap: 20px;
+}
+
+.signup-item-container {
+    width: 100%;
+    border: 2px solid black;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    background-color: #0077cc;
+}
+
+.signup-item-container>input,
+label {
+    width: 100%;
+    height: 50%;
+}
+
+.signup-item-container>button {
+    background-color: rgb(56, 61, 56);
+    width: 100%;
+    height: 100%;
+}

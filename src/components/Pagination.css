@@ -1,0 +1,40 @@
+.pagination-pokemon-collection {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #2196F3;
+    padding: 10px;
+}
+
+.pagination-pokemon-single {
+    border: 2px solid black;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    background-color: rgb(218, 218, 218);
+}
+
+.pagination-pokemon-single:hover {
+    background-color: rgb(4, 44, 223);
+}
+
+.pagination-img-container {
+    background-color: rgb(91, 92, 91);
+}
+
+.pokemon-img {
+    width: 25%;
+}
+
+.pagination-active {
+    background-color: red;
+    border: 1px solid black;
+}
+
+@media only screen and (max-width: 1500px) {
+    .pagination-pokemon-collection {
+        display: grid;
+        grid-template-columns: auto;
+        background-color: #2196F3;
+        padding: 10px;
+    }
+}

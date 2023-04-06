@@ -1,0 +1,33 @@
+.login-main {
+    display: grid;
+    grid-template-columns: auto;
+    /* background-color: #2196F3; */
+    padding: 10px;
+    justify-content: center;
+    gap: 20px;
+}
+
+.login-email-container,
+.login-password-container,
+.login-submit-btn-container {
+    width: 100%;
+    border: 2px solid black;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    background-color: #0077cc;
+}
+
+.login-email-container>input,
+label,
+.login-password-container>input,
+label {
+    width: 100%;
+    height: 50%;
+}
+
+.login-submit-btn-container>button {
+    background-color: rgb(56, 61, 56);
+    width: 100%;
+    height: 100%;
+}

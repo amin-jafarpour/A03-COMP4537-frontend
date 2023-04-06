@@ -1,0 +1,1 @@
+module.exports = { authServerPort: 7000, pokeServerPort: 8000 }

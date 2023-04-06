@@ -1,0 +1,1 @@
+module.exports = { link: 'https://good-puce-springbok-robe.cyclic.app/' }
